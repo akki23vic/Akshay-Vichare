@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF--8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Programming Tutor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --glow-primary: 0 0 15px rgba(59, 130, 246, 0.5);
+        --glow-primary-hover: 0 0 25px rgba(59, 130, 246, 0.7);
+        --glow-violet: 0 0 15px rgba(139, 92, 246, 0.6);
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in {
+        animation: fadeIn 0.5s ease-out forwards;
+      }
+
+      @keyframes aurora {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+
+      .futuristic-bg {
+        background-color: #02040a;
+        background-image: radial-gradient(at 20% 20%, hsla(217, 75%, 40%, 0.3) 0px, transparent 50%),
+                          radial-gradient(at 80% 20%, hsla(262, 65%, 50%, 0.2) 0px, transparent 50%),
+                          radial-gradient(at 20% 80%, hsla(217, 75%, 40%, 0.2) 0px, transparent 50%),
+                          radial-gradient(at 80% 80%, hsla(262, 65%, 50%, 0.3) 0px, transparent 50%);
+        background-size: 200% 200%;
+        animation: aurora 15s ease infinite;
+      }
+      
+      .glass-pane {
+        background-color: rgba(17, 24, 39, 0.6);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              mono: ['Roboto Mono', 'monospace'],
+            },
+            colors: {
+              'gray': {
+                950: '#09090B',
+                900: '#18181B',
+                800: '#27272A',
+                700: '#3F3F46',
+                600: '#52525B',
+                500: '#71717A',
+                400: '#A1A1AA',
+                300: '#D4D4D8',
+                200: '#E4E4E7',
+                100: '#F4F4F5',
+                50: '#FAFAFA',
+              },
+              'primary': {
+                DEFAULT: '#3B82F6',
+                '50': '#EFF6FF',
+                '100': '#DBEAFE',
+                '200': '#BFDBFE',
+                '300': '#93C5FD',
+                '400': '#60A5FA',
+                '500': '#3B82F6',
+                '600': '#2563EB',
+                '700': '#1D4ED8',
+                '800': '#1E40AF',
+                '900': '#1E3A8A',
+                '950': '#172554',
+              },
+              'violet': {
+                '400': '#A78BFA',
+                '500': '#8B5CF6',
+                '600': '#7C3AED',
+              }
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.5s ease-out forwards',
+              'aurora': 'aurora 15s ease infinite',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              aurora: {
+                '0%': { backgroundPosition: '0% 50%' },
+                '50%': { backgroundPosition: '100% 50%' },
+                '100%': { backgroundPosition: '0% 50%' },
+              }
+            },
+            boxShadow: {
+              'glow-primary': 'var(--glow-primary)',
+              'glow-primary-hover': 'var(--glow-primary-hover)',
+              'glow-violet': 'var(--glow-violet)',
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-markdown": "https://aistudiocdn.com/react-markdown@^10.1.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.27.0",
+    "react-syntax-highlighter/": "https://aistudiocdn.com/react-syntax-highlighter@^16.1.0/",
+    "react-syntax-highlighter": "https://aistudiocdn.com/react-syntax-highlighter@^16.1.0",
+    "remark-gfm": "https://aistudiocdn.com/remark-gfm@^4.0.1"
+  }
+}
+</script>
+</head>
+  <body class="futuristic-bg text-gray-100 font-sans">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

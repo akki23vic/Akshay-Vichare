@@ -1,0 +1,5 @@
+{
+  "name": "AI Programming Tutor",
+  "description": "An interactive web application that leverages the Gemini API to help school students learn programming. It features an AI-powered code explainer, a code generator, and a quiz master to provide a comprehensive learning experience from scratch to advanced levels.",
+  "requestFramePermissions": []
+}
